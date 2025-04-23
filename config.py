@@ -1,14 +1,14 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # Для локального тестирования
+load_dotenv()
 
-# Получаем переменные из окружения Heroku или .env файла
+# Получаем переменные окружения
 BOT_TOKEN = os.getenv('BOT_TOKEN') or os.environ.get('BOT_TOKEN')
-ADMIN_ID = int(os.getenv('ADMIN_ID') or int(os.environ.get('ADMIN_ID', 0))
+ADMIN_ID = int(os.getenv('ADMIN_ID') or int(os.environ.get('ADMIN_ID', '0'))
 
-# Проверка обязательных переменных
+# Проверка наличия обязательных переменных
 if not BOT_TOKEN:
-    raise ValueError("Не указан BOT_TOKEN! Добавьте его в переменные Heroku")
+    raise ValueError("BOT_TOKEN не установлен! Добавьте его в переменные Heroku")
 if not ADMIN_ID:
-    raise ValueError("Не указан ADMIN_ID! Добавьте его в переменные Heroku")
+    raise ValueError("ADMIN_ID не установлен! Добавьте его в переменные Heroku")
