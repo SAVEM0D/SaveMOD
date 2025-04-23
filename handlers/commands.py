@@ -5,7 +5,7 @@ import random
 import asyncio
 import sqlite3
 from datetime import datetime
-from emoji_config import AnimatedEmoji
+from utils.emoji_config import AnimatedEmoji
 
 router = Router()
 
